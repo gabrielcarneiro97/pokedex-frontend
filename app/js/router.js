@@ -1,7 +1,3 @@
-var app = angular.module('pokedex', ['ngRoute']);
-
-var hostAddress = '';
-
 console.log("zzzzz");
 /**
  * Configuração das rotas

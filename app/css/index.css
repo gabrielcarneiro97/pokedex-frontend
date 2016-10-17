@@ -1,0 +1,15 @@
+#brand-icon {
+	padding: 1%;
+	width:100%;
+	height: auto;
+
+}
+
+.navbar-brand {
+	padding: 7px 15px;
+	max-width: 70px;
+}
+
+.navbar-right {
+	padding: 1%;
+}
