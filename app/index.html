@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Pokdex</title>
+  <title>Pokedex</title>
 </head>
+<link rel="icon" type="image/png" href="assets/poke-icon.PNG">
 <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
 <link rel="stylesheet" href="css/index.css">
-
 
 <!-- Dependencias -->
 <script type="text/javascript" src="../node_modules/jquery/dist/jquery.min.js"></script>
@@ -28,24 +28,21 @@
 
 <body ng-app="pokedex">
 
-
-
-<nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <div class="navbar-header">
-    	<a class="navbar-brand" href="#/">
-      		<img alt="Brand" src="assets/poke-icon.PNG" id="brand-icon">
-    	</a>
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#/">
+          <img alt="Brand" src="assets/poke-icon.PNG" id="brand-icon">
+        </a>
+      </div>
+      <ul class="nav navbar-nav navbar-right">
+        <li><i class="fa fa-lock fa-2x" id="adm-click"></i></li>
+      </ul>      
     </div>
-    <ul class="nav navbar-nav navbar-right">
-      <li><i class="fa fa-lock fa-2x" id="adm-click"></i></li>
-    </ul>
-    
-  </div>
-</nav>
+  </nav>
 
 
-	<div ng-view class="container-fluid"></div>
+  <div ng-view class="container-fluid"></div>
 
 
 </body>
