@@ -6,6 +6,26 @@
 <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
 <link rel="stylesheet" href="css/index.css">
+
+
+<!-- Dependencias -->
+<script type="text/javascript" src="../node_modules/jquery/dist/jquery.min.js"></script>
+<script type="text/javascript" src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../node_modules/angular/angular.min.js"></script>
+<script type="text/javascript" src="../node_modules/angular-route/angular-route.min.js"></script>
+
+<!-- Config -->
+<script type="text/javascript" src="config.js"></script>
+
+<!-- Controllers -->
+<script type="text/javascript" src="controllers/main.js"></script>
+<script type="text/javascript" src="controllers/adm.js"></script>
+<script type="text/javascript" src="controllers/pokemon.js"></script>
+
+
+<!-- Router -->
+<script type="text/javascript" src="router.js"></script>
+
 <body ng-app="pokedex">
 
 
@@ -24,26 +44,8 @@
   </div>
 </nav>
 
-<div id="background">
-	<div ng-view></div>
-</div>
 
-
-<!-- Dependencias -->
-<script type="text/javascript" src="../node_modules/jquery/dist/jquery.min.js"></script>
-<script type="text/javascript" src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="../node_modules/angular/angular.min.js"></script>
-<script type="text/javascript" src="../node_modules/angular-route/angular-route.min.js"></script>
-
-<!-- Config -->
-<script type="text/javascript" src="js/config.js"></script>
-
-<!-- Controllers -->
-<script type="text/javascript" src="js/controllers/main.js"></script>
-<script type="text/javascript" src="js/controllers/adm.js"></script>
-
-<!-- Router -->
-<script type="text/javascript" src="js/router.js"></script>
+	<div ng-view class="container-fluid"></div>
 
 
 </body>

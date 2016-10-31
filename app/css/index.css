@@ -5,13 +5,6 @@
 
 }
 
-#background {
-	min-height: 700px;
-	width: 100%;
-	background-color: white;
-	background-position: center;
-}
-
 .navbar-brand {
 	padding: 7px 15px;
 	max-width: 70px;
@@ -19,4 +12,12 @@
 
 .navbar-right {
 	padding: 1%;
+}
+
+.btn-poke {
+	margin-bottom: 10%;
+}
+
+.numSpan {
+	font-size: 15px;
 }

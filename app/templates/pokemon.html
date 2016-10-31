@@ -1,0 +1,77 @@
+<link rel="stylesheet" href="css/pokemon.css">
+
+<div class="row">
+	<div class="col-sm-3 col-sm-offset-1">
+		<div class="thumbnail">
+	    	<img ng-if="ctrl.id < 10" ng-src="http://assets.pokemon.com/assets/cms2/img/pokedex/full/00{{ctrl.id}}.png">
+	    	<img ng-if="ctrl.id < 100 && ctrl.id >= 10" ng-src="http://assets.pokemon.com/assets/cms2/img/pokedex/full/0{{ctrl.id}}.png">
+	    	<img ng-if="ctrl.id >= 100 && ctrl.id <= 151" ng-src="http://assets.pokemon.com/assets/cms2/img/pokedex/full/{{ctrl.id}}.png">
+
+			<div class="caption">
+				<h3>{{poke.name}}  <span class="numSpan pull-right">#{{ctrl.id}}</span></h3>
+			</div>
+		</div>
+
+		<!-- <div class="panel panel-default">
+			<div class="panel-heading">
+				<h4 class="panel-title">EVOLVES TO</h4>
+			</div>
+			<div class="panel-body">
+				<img class="evolveImg" ng-if="ctrl.evoId < 10" ng-src="http://assets.pokemon.com/assets/cms2/img/pokedex/full/00{{ctrl.evoId}}.png">
+		    	<img class="evolveImg" ng-if="ctrl.evoId < 100 && ctrl.evoId >= 10" ng-src="http://assets.pokemon.com/assets/cms2/img/pokedex/full/0{{ctrl.evoId}}.png">
+		    	<img class="evolveImg" ng-if="ctrl.evoId > 100 && ctrl.evoId <= 151" ng-src="http://assets.pokemon.com/assets/cms2/img/pokedex/full/{{ctrl.evoId}}.png">
+		    	<a href="#/pokemon/{{ctrl.evoId}}" class="btn btn-default pull-right btn-poke" role="button">{{evo.name}}</a>
+			</div>
+		</div> -->
+	</div>
+
+	<div class="col-sm-6">
+
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h4 class="panel-title">BASE STATS</h4>
+		</div>
+
+		<div class="panel-body">
+			<div class="progress">
+	  			<div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="{{poke.hpPerc}}" aria-valuemin="0" aria-valuemax="130" ng-style="{'width': poke.hpPerc + '%'}">
+	    			HP: {{poke.hp}}
+	  			</div>
+			</div>
+			<div class="progress">
+	  			<div class="progress-bar" role="progressbar" aria-valuenow="{{poke.atkPerc}}" aria-valuemin="0" aria-valuemax="130" ng-style="{'width': poke.atkPerc + '%'}">
+	    			ATTACK: {{poke.attack}}
+	  			</div>
+			</div>
+			<div class="progress">
+	  			<div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="{{poke.defPerc}}" aria-valuemin="0" aria-valuemax="130" ng-style="{'width': poke.defPerc + '%'}">
+	    			DEFENSE: {{poke.defense}}
+	  			</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h4 class="panel-title">TYPES</h4>
+		</div>
+
+		<div class="panel-body">
+			<div ng-repeat="type in poke.types" class="type {{type.name}}">{{type.up}}</div>
+		</div>
+	</div>
+
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h4 class="panel-title">ABILITIES</h4>
+		</div>
+
+		<div class="panel-body">
+			<div ng-repeat="ability in poke.abilities" class="ability">{{ability.up}}</div>
+		</div>
+	</div>
+
+
+
+
+</div>

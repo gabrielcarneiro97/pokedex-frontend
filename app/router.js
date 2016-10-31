@@ -1,21 +1,27 @@
-console.log("zzzzz");
 /**
  * Configuração das rotas
  */
 app.config(function($routeProvider) {
-$routeProvider.when('/',
+$routeProvider.when('/:page',
       {
         templateUrl: 'templates/main.html',
         controller: "mainController",
-        controllerAs: "mainCtrl"
+        controllerAs: "ctrl"
       }
     )
     .when('/adm',
       {
         templateUrl: 'templates/adm.html',
         controller: "admController",
-        controllerAs: "admCtrl"
+        controllerAs: "ctrl"
       }
     )
-    .otherwise({redirectTo: '/'});
+    .when('/pokemon/:id',
+      {
+        templateUrl: 'templates/pokemon.html',
+        controller: "pokemonController",
+        controllerAs: "ctrl"
+      }
+    )
+    .otherwise({redirectTo: '/0'});
 });
