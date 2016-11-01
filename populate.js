@@ -1,6 +1,5 @@
 function populate(){
 	for (var i = 1; i <= 151; i++) {
-
 		$.ajax({
 			method: "GET",
 			url:`http://pokeapi.co/api/v2/pokemon/${i}/`,
@@ -17,23 +16,43 @@ function populate(){
 				pokemon.ataque = data.stats[4].base_stat;
 				pokemon.hp = data.stats[5].base_stat;
 
-				pokemon.tipos = [];
+				if(i < 10)
+					pokemon.img = "http://assets.pokemon.com/assets/cms2/img/pokedex/full/00{{poke.id}}.png"
+				else if (i < 100)
+					pokemon.img = "http://assets.pokemon.com/assets/cms2/img/pokedex/full/0{{poke.id}}.png"
+				else
+					pokemon.img = "http://assets.pokemon.com/assets/cms2/img/pokedex/full/{{poke.id}}.png"
 
-				for (var i = 0; i < data.types.length; i++) 
-					pokemon.tipos[i] = data.types[i].type.name;
+
+				let tipos = [];
+
+				for (var j = 0; j < data.types.length; j++){
+					tipos[j] = {};
+					tipos[j].pokeId = i;
+					tipos[j].tipoNome = data.types[j].type.name;
+				} 
 
 
 
-				pokemon.golpes = [];
+				let golpes = [];
 
-				for (var i = 0; i < data.abilities.length; i++) 
-					pokemon.golpes[i] = data.abilities[i].ability.name;
-
+				for (var j = 0; j < data.abilities.length; j++){
+					golpes[j] = {};
+					goples[j].pokeId = i;
+					golpes[j].nome = data.abilities[j].ability.name;
+				}
 
 
 				console.log(pokemon);
 
-				// $.ajax({});
+				//postPoke(pokemon);
+
+				for (var j = 0; j < golpes.length; j++) 
+					//postGolpe(golpes[j]);
+					
+				for (var j = 0; j < tipos.length; j++)
+					//relacTipo(tipo);
+
 			}
 		});
 
@@ -42,11 +61,32 @@ function populate(){
 	}
 }
 
-function put(pokemon){
+function postPoke(pokemon){
 	$.ajax({
-		method: "PUT",
-		dataType: "json",
+		method: "POST",
+		traditional: true,
+		contentType: "application/json: charset=tuf-8",
 		data: JSON.stringify(pokemon),
+		url: ""
+	});
+}
+
+function postGolpe(golpe){
+	$.ajax({
+		method: "POST",
+		traditional: true,
+		contentType: "application/json: charset=tuf-8",
+		data: JSON.stringify(golpe),
+		url: ""
+	});
+}
+
+function relacTipo(tipo){
+	$.ajax({
+		method: "POST",
+		traditional: true,
+		contentType: "application/json: charset=tuf-8",
+		data: JSON.stringify(tipo),
 		url: ""
 	});
 }
