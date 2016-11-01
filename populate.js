@@ -28,8 +28,8 @@ function populate(){
 
 				for (var j = 0; j < data.types.length; j++){
 					tipos[j] = {};
-					tipos[j].pokeId = i;
-					tipos[j].tipoNome = data.types[j].type.name;
+					tipos[j].id = i;
+					tipos[j].nome = data.types[j].type.name;
 				} 
 
 
@@ -38,7 +38,7 @@ function populate(){
 
 				for (var j = 0; j < data.abilities.length; j++){
 					golpes[j] = {};
-					goples[j].pokeId = i;
+					goples[j].id = i;
 					golpes[j].nome = data.abilities[j].ability.name;
 				}
 
